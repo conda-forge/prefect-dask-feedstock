@@ -20,7 +20,7 @@ requirements:
     - python >=3.7
   run:
     - distributed >=2022.2.0
-    - prefect >=2.3.0
+    - prefect >=2.6.0
     - python >=3.7
 
 test:
