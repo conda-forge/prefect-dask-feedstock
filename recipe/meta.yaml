@@ -1,5 +1,5 @@
 {% set name = "prefect-dask" %}
-{% set version = "0.2.2" %}
+{% set version = "0.2.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b1ad47b25d8882218036f91f3ad86d244cf4c2994c0de42ecdf3b5a154e865d6
+  sha256: b8c0f697e5d8660885c1bc31675dce7b153c3d60925293f339d3326ef25add3f
 
 build:
   number: 0
@@ -20,7 +20,7 @@ requirements:
     - python >=3.7
   run:
     - distributed >=2022.2.0
-    - prefect >=2.6.0
+    - prefect >=2.8.2
     - python >=3.7
 
 test:
