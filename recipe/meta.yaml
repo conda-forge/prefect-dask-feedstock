@@ -1,5 +1,5 @@
 {% set name = "prefect-dask" %}
-{% set version = "0.2.10" %}
+{% set version = "0.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 325353e2858361524981e223f66a5b587173850474468f98ba63bf020dc785c9
+  sha256: 1e99e7aa645dfab60673a37ff9f5a2efd08863eb00ddf2320a536351b2d00357
 
 build:
   number: 0
