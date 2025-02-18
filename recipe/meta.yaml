@@ -16,20 +16,23 @@ build:
 
 requirements:
   host:
+    - python {{ python_min }}
     - pip
-    - python >=3.7
+    - setuptools
   run:
     - distributed >=2022.2.0
-    - prefect >=2.8.2
-    - python >=3.7
+    - prefect >=3.1.0
+    - python >={{ python_min }}
 
 test:
   imports:
     - prefect_dask
   requires:
     - pip
+    - python {{ python_min }}
   commands:
-    - pip check
+    # Check that the version is correct
+    - sh -c '[ "$(python -c 'import prefect_dask; print(prefect_dask.__version__);' = "{{ version }}") ]'
 
 about:
   home: https://github.com/PrefectHQ/prefect-dask
@@ -42,6 +45,6 @@ about:
 
 extra:
   recipe-maintainers:
-    - madkinsz
+    - zzstoatzz
+    - cicdw
     - desertaxle
-    - ahuang11
