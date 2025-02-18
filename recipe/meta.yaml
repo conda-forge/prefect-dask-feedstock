@@ -1,13 +1,13 @@
 {% set name = "prefect-dask" %}
-{% set version = "0.2.10" %}
+{% set version = "0.3.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 325353e2858361524981e223f66a5b587173850474468f98ba63bf020dc785c9
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 54aab08668004a0bbf465a61f7481f5d6b8d57337ffb1fc246eeae7646ecf2b4
 
 build:
   number: 0
@@ -16,18 +16,20 @@ build:
 
 requirements:
   host:
+    - python {{ python_min }}
     - pip
-    - python >=3.7
+    - setuptools
   run:
     - distributed >=2022.2.0
-    - prefect >=2.8.2
-    - python >=3.7
+    - prefect >=3.1.0
+    - python >={{ python_min }}
 
 test:
   imports:
     - prefect_dask
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
@@ -42,6 +44,6 @@ about:
 
 extra:
   recipe-maintainers:
-    - madkinsz
+    - zzstoatzz
+    - cicdw
     - desertaxle
-    - ahuang11
