@@ -31,8 +31,7 @@ test:
     - pip
     - python {{ python_min }}
   commands:
-    # Check that the version is correct
-    - sh -c '[ "$(python -c 'import prefect_dask; print(prefect_dask.__version__);' = "{{ version }}") ]'
+    - pip check
 
 about:
   home: https://github.com/PrefectHQ/prefect-dask
